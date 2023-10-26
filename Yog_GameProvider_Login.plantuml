@@ -1,0 +1,10 @@
+@startuml
+:"login";
+if (IsValidationError) then (no)
+    :Return Error;
+    kill
+else (yes)
+    :利用sp Yog_Online_ConsumeSSO 拿到 SSO
+    邏輯:
+    利用;
+@enduml

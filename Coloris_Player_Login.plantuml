@@ -1,0 +1,47 @@
+@startuml
+
+:"v2/player-login";
+: LoginAsync; 
+if (CheckPlayerIsOnline
+邏輯寫在sp Coloris_Online_CheckPlayerIsOnline裏面，
+回傳 ErrorCode) then (ErrorCode!=0 不合法)
+  :回傳Error;
+  kill
+else (ErrorCode==0 合法)
+  :GetGameByGameId：
+  利用GameId, WebId, CustomerStatus拿到Game;
+  :RecordGameEntranceLocation-
+  在PlayerGameEntranceLocation Table中記錄玩家資訊;
+  if (利用拿到的Game裏面的GameProviderId判斷) then (GameProviderId>50)
+    :用Mars的方式登入;
+    :GetUserInfoForMars（拿玩家資訊For Mars）-
+    拿到GameProviderId跟GameIdAtGameProvider
+    利用上面兩個Id再拿到ProductType
+    然後把ProductType轉成Mars可用的SWProdeuctType
+    最後用GetMarsLoginInfo(webId, username, SWProdeuctType)拿到玩家資訊;
+    if (玩家資訊) then (沒資料)
+      :Return Error;
+      kill
+    else (有資料)
+      :利用玩家資訊登入Mars Server（會先從db拿Mars URL）
+      然後拿到Response
+      然後GetGameProviderWhitelist()
+      在判斷isTransferWalletProvider
+      如果是的話就把錢從Platform轉給Provider
+      最後會利用 LoginUrl,gpid,gameIdAtGP,langParam,deviceParam,betcode組成URL;
+      kill
+    endif
+  else (GameProviderId<=50)
+    :用Yog的方式登入-
+    利用 sp Coloris_Online_RequestSSO 拿到SsoID跟SsoKey
+    然後用玩家資訊跟SSO登入到Yog Server拿到Response
+    然後利用GetThemeOddstyle()拿到oddstyle
+    最後利用loginUrl,platformUrl,oddstyle組出URL
+    組URL時會先檢查loginUrl是否可以訪問到
+    如果不行就換成platformUrl導到提示玩家的頁面;
+    kill
+  endif
+endif
+
+
+@enduml

@@ -1,0 +1,63 @@
+@startuml
+allowmixing
+
+Object FrontEnd{
+    前端
+}
+
+Object BaseWL{
+    Library
+}
+
+Object Coloris{
+    Front-End API Calling
+}
+
+Object Yog{
+    與GameProvider API溝通
+}
+
+Object Hermese{
+    與PaymentProvider API溝通
+}
+
+Object Promodia{
+    負責Promotion
+}
+
+Object Proxydia{
+    轉換成Http2
+}
+
+Object GameProvider{
+    遊戲提供
+}
+
+Object PaymentProvider {
+    支付提供
+}
+
+Object OS {
+    Triton
+}
+
+Object NS {
+    Mars
+}
+
+database "Database" as db
+
+FrontEnd --|> Coloris
+Coloris --|> Yog
+Coloris --|> Hermese
+Coloris --|> Proxydia
+Coloris --|> db
+Coloris -right> OS :透過GameProviderId決定
+Coloris -left> NS :透過GameProviderId決定
+Yog -left> GameProvider
+Hermese -right> PaymentProvider
+Proxydia --|> Promodia
+Yog --|> db
+Hermese --|> db
+Promodia --|> db
+@enduml

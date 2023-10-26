@@ -1,0 +1,33 @@
+@startuml
+Object Operator {
+  運營商（客戶）
+}
+
+Object Agent {
+  代理
+}
+
+Object Player {
+  玩家
+}
+
+Object "Platform Providers" as PlatformProviders {
+  提供平臺（WL）
+}
+
+Object "Game Providers" as GameProviders {
+  提供遊戲
+}
+
+Object "Payment Providers" as PaymentProviders {
+  提供支付
+}
+
+Player -- "進入平臺玩" Operator
+Player -- Agent :透過代理
+Agent -- Operator :進入平臺玩
+Operator -- PlatformProviders :WL提供平臺給客戶
+PlatformProviders -- "WL透過GameProvider進入第三方Games" GameProviders
+PlatformProviders -- PaymentProviders :WL透過PaymentProvider進行支付
+
+@enduml
