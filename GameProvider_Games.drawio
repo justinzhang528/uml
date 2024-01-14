@@ -1,0 +1,64 @@
+<mxfile host="65bd71144e">
+    <diagram id="PGlVaSYC-Dbs11HuZite" name="Page-1">
+        <mxGraphModel dx="1002" dy="571" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="20" value="" style="rounded=1;whiteSpace=wrap;html=1;fontSize=16;" vertex="1" parent="1">
+                    <mxGeometry x="120" y="600" width="560" height="390" as="geometry"/>
+                </mxCell>
+                <mxCell id="21" value="" style="rounded=1;whiteSpace=wrap;html=1;fontSize=16;" vertex="1" parent="1">
+                    <mxGeometry x="120" y="80" width="560" height="480" as="geometry"/>
+                </mxCell>
+                <mxCell id="2" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;AllAPIGameProviders&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=16;" parent="1" vertex="1">
+                    <mxGeometry x="160" y="120" width="187" height="53" as="geometry"/>
+                </mxCell>
+                <mxCell id="3" value="&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;存遊戲集成商（SBO）&lt;/span&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=18;" parent="1" vertex="1">
+                    <mxGeometry x="347" y="126.5" width="163" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="4" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;AllGameProviders&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=16;" parent="1" vertex="1">
+                    <mxGeometry x="160" y="200" width="187" height="53" as="geometry"/>
+                </mxCell>
+                <mxCell id="5" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;AllGames&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=16;" parent="1" vertex="1">
+                    <mxGeometry x="160" y="361.5" width="187" height="53" as="geometry"/>
+                </mxCell>
+                <mxCell id="6" value="&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;存遊戲提供商&lt;/span&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=18;" parent="1" vertex="1">
+                    <mxGeometry x="320" y="206.5" width="163" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="7" value="&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;存遊戲&lt;/span&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=18;" parent="1" vertex="1">
+                    <mxGeometry x="300" y="368" width="163" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="8" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;CompanyAPIGameProviders&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=16;" parent="1" vertex="1">
+                    <mxGeometry x="160" y="640" width="244" height="53" as="geometry"/>
+                </mxCell>
+                <mxCell id="9" value="&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;存遊戲集成商（SBO）&lt;/span&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=18;" parent="1" vertex="1">
+                    <mxGeometry x="404" y="646.5" width="163" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="10" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;CompanyGameProviders&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=16;" parent="1" vertex="1">
+                    <mxGeometry x="160" y="720" width="244" height="53" as="geometry"/>
+                </mxCell>
+                <mxCell id="11" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;CompanyGames&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=16;" parent="1" vertex="1">
+                    <mxGeometry x="160" y="796.5" width="244" height="53" as="geometry"/>
+                </mxCell>
+                <mxCell id="12" value="&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;存遊戲提供商&lt;/span&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=18;" parent="1" vertex="1">
+                    <mxGeometry x="377" y="726.5" width="163" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="13" value="&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;存遊戲&lt;/span&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=18;" parent="1" vertex="1">
+                    <mxGeometry x="357" y="803" width="163" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="16" value="&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;備註：&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;- 只能開發人員做設定&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;- 用管理員帳號登入後台，在10.2 Game List可以去做設定&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;- 更改設定後會影響到所有客戶&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=18;" vertex="1" parent="1">
+                    <mxGeometry x="160" y="414.5" width="323" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="17" value="&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;備註：&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;- 讓客戶自己去做設定&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;- 用客戶帳號登入後台，在10.1 GameList可以去做設定&lt;br&gt;&lt;/span&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=18;" vertex="1" parent="1">
+                    <mxGeometry x="160" y="860" width="323" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="18" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;GameProviderWhiteList&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=16;" vertex="1" parent="1">
+                    <mxGeometry x="160" y="280" width="187" height="53" as="geometry"/>
+                </mxCell>
+                <mxCell id="19" value="&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;遊戲提供商白名單&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;- 在AllGameProviders裡開啟了某個GameProvider後在CompanyGameProviders裡預設是關閉的，所以需要在白名單添加要開啟的客戶&lt;/span&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=18;" vertex="1" parent="1">
+                    <mxGeometry x="358.5" y="264.75" width="311.5" height="85.25" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

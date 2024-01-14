@@ -1,0 +1,31 @@
+<mxfile host="65bd71144e">
+    <diagram id="5dsZXs7WNTnAbqO_rOF9" name="Page-1">
+        <mxGraphModel dx="1002" dy="571" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="4" value="" style="edgeStyle=none;html=1;" parent="1" source="2" target="3" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="2" value="GetSboGameList" style="whiteSpace=wrap;html=1;rounded=0;align=center;" parent="1" vertex="1">
+                    <mxGeometry x="320" y="50" width="150" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="6" value="" style="edgeStyle=none;html=1;fontSize=12;" parent="1" source="3" target="5" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="3" value="&lt;font color=&quot;#ffffff&quot;&gt;- 從 Sbo (Triton) 拿到 ThridPartyGameList&amp;nbsp;&lt;br&gt;- 如果是 isUsingMars 的話，從 Mars 拿到 GameList&lt;br&gt;- 把拿到的遊戲by GameProviderId，GameProviderName分類，用 sp_Yog_Scheduler_StoreGameProvider 存到&lt;span style=&quot;font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace;&quot;&gt;&lt;font style=&quot;font-size: 12px;&quot;&gt;AllGameProviders&lt;/font&gt;&lt;/span&gt;&lt;span style=&quot;font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace; font-size: 14px;&quot;&gt;&amp;nbsp;&lt;/span&gt;裡&lt;/font&gt;" style="whiteSpace=wrap;html=1;rounded=0;align=left;" parent="1" vertex="1">
+                    <mxGeometry x="220" y="120" width="350" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="8" value="" style="edgeStyle=none;html=1;fontSize=12;" parent="1" source="5" target="7" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="5" value="- 把遊戲分類成 PromotionGame == 1028 與 不是PromotionGame的，分別用&amp;nbsp; sp&lt;font color=&quot;#ffffff&quot;&gt;_&lt;span style=&quot;font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace;&quot;&gt;&lt;font style=&quot;font-size: 12px;&quot;&gt;Yog_Scheduler_StorePromotionGameList 跟 sp_&lt;/font&gt;&lt;/span&gt;&lt;span style=&quot;font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace;&quot;&gt;&lt;font style=&quot;font-size: 12px;&quot;&gt;Yog_Scheduler_StoreSboGameList_4 存到 PromoteAllGames 跟 AllGames 裡&lt;/font&gt;&lt;/span&gt;&lt;/font&gt;" style="whiteSpace=wrap;html=1;rounded=0;align=left;" parent="1" vertex="1">
+                    <mxGeometry x="220" y="250" width="350" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="7" value="- 把遊戲分類成 PromotionGame == 1028 與 不是PromotionGame的，分別用&amp;nbsp; sp&lt;font color=&quot;#ffffff&quot;&gt;_&lt;span style=&quot;font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace;&quot;&gt;&lt;font style=&quot;font-size: 12px;&quot;&gt;Yog_Scheduler_StorePromotionGameList 跟 sp_&lt;/font&gt;&lt;/span&gt;&lt;span style=&quot;font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace;&quot;&gt;&lt;font style=&quot;font-size: 12px;&quot;&gt;Yog_Scheduler_StoreSboGameList_ 存到 PromoteAllGames 跟 AllGames 裡&lt;br&gt;- 最後利用 sp_&lt;/font&gt;&lt;/span&gt;&lt;span style=&quot;font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace;&quot;&gt;&lt;font style=&quot;font-size: 12px;&quot;&gt;Yog_Scheduler_StoreTranslationInfo 把所有遊戲的 GameInfo 存到&amp;nbsp;&lt;/font&gt;&lt;/span&gt;&lt;span style=&quot;font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace;&quot;&gt;&lt;font style=&quot;font-size: 12px;&quot;&gt;GameTranslation 裡面&lt;/font&gt;&lt;/span&gt;&lt;/font&gt;" style="whiteSpace=wrap;html=1;rounded=0;align=left;" parent="1" vertex="1">
+                    <mxGeometry x="220" y="370" width="350" height="110" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

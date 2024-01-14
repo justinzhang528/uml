@@ -52,8 +52,8 @@ Coloris --|> Yog
 Coloris --|> Hermese
 Coloris --|> Proxydia
 Coloris --|> db
-Coloris -right> OS :透過GameProviderId決定
-Coloris -left> NS :透過GameProviderId決定
+Coloris -right> OS :GameProviderId<=50
+Coloris -left> NS :GameProviderId>50
 Yog -left> GameProvider
 Hermese -right> PaymentProvider
 Proxydia --|> Promodia

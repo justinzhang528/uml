@@ -1,0 +1,64 @@
+<mxfile host="65bd71144e">
+    <diagram id="teszuPsZ5ThQxpp2naT3" name="Page-1">
+        <mxGraphModel dx="1002" dy="571" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="12" value="" style="edgeStyle=none;html=1;" parent="1" source="2" target="10" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="2" value="player/v2/transaction/request-withdrawal" style="whiteSpace=wrap;html=1;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry x="265" y="40" width="246" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="13" value="" style="edgeStyle=none;html=1;" parent="1" source="10" target="11" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="10" value="&lt;span style=&quot;color: rgb(255, 255, 255);&quot;&gt;- req.GetUserData() 的 JWT 是利用 Filter 拿到 Header 的 Authorization 欄位的值&lt;/span&gt;&lt;span style=&quot;color: rgb(255, 102, 102);&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;br&gt;- 檢查支付密碼： 輸入 PlaymentPassword 錯誤超過5次就把玩家狀態改成 suspend" style="whiteSpace=wrap;html=1;rounded=0;align=left;" parent="1" vertex="1">
+                    <mxGeometry x="268" y="110" width="240" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="17" value="" style="edgeStyle=none;html=1;" parent="1" source="11" target="15" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="11" value="WithdrawalRequest -&amp;gt; validate:&lt;br&gt;- 檢查 username/currency/IP 是否為 null&lt;br&gt;- 檢查 WebId 的值（不能小於 0）&lt;br&gt;- 檢查 Username/domain/BankInfo 的格式" style="whiteSpace=wrap;html=1;rounded=0;align=left;" parent="1" vertex="1">
+                    <mxGeometry x="268" y="220" width="240" height="90" as="geometry"/>
+                </mxCell>
+                <mxCell id="19" value="" style="edgeStyle=none;html=1;fontSize=12;" parent="1" source="15" target="18" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="15" value="&lt;font color=&quot;#ffffff&quot;&gt;&lt;font style=&quot;font-size: 12px;&quot;&gt;- 從 sp_Coloris_Account_GetAvailableCurrency 拿到客戶自己設定的 Currency 資訊&lt;br&gt;- 拿到的 Currency 為 null 返回錯誤&lt;br&gt;- withdrawal 的金額不在限制內/不允許小數點的設定但出現小數點的金額就返回錯誤&lt;br&gt;- 如果玩家的 DailyPlayerWithdrawalCount 有限制的話，從 sp_&lt;/font&gt;&lt;font style=&quot;font-size: 12px;&quot;&gt;&lt;font face=&quot;Consolas, Courier New, monospace&quot;&gt;Coloris_Account_GetPlayerDailyWithdrawalCount 拿到玩家今日的提款次數，如果提款次數超過限制的話，就返回錯誤&lt;/font&gt;&lt;br&gt;&lt;font face=&quot;Consolas, Courier New, monospace&quot;&gt;- IsWithdrawalLimitEnabled 代表玩家需要達到多少的turnover才能提款（假設 withdrawalLimit 是 200，每一次玩家結算後的 turnover 都會從200 減去），提款的時候&lt;/font&gt;&lt;/font&gt;&lt;span style=&quot;font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace;&quot;&gt;&lt;font style=&quot;font-size: 12px;&quot;&gt;如果大於0的話，就代表還沒達成條件，不能提款並返回錯誤&lt;/font&gt;&lt;/span&gt;&lt;font style=&quot;font-size: 12px;&quot;&gt;&lt;br&gt;&lt;font face=&quot;Consolas, Courier New, monospace&quot;&gt;- 如果 DailyWithdrawLimit 是 Yes 的話，每日只能提款一次，並且不能同時有一筆以上&lt;/font&gt;&lt;/font&gt;&lt;span style=&quot;font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace;&quot;&gt;正在等待處理的交易&lt;/span&gt;&lt;br&gt;&lt;/font&gt;" style="whiteSpace=wrap;html=1;rounded=0;align=left;" parent="1" vertex="1">
+                    <mxGeometry x="180.5" y="320" width="415" height="200" as="geometry"/>
+                </mxCell>
+                <mxCell id="21" value="" style="edgeStyle=none;html=1;fontSize=12;" parent="1" source="18" target="20" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="18" value="CheckPlayerIsOnline (WebId, CustomerId, OnlineId)&lt;br&gt;- 檢查 OnlineId （不能小於0）&lt;br&gt;- 檢查跟 PlayerOnline 裡最新一筆的 OnlineId 是否一樣 （不一樣就返回錯誤）&lt;br&gt;- 把 PlayerOnline 裡不一樣的 OnlineId 都移到 PlayerOnlineHistory 裡面&lt;br&gt;- 如果 PlayerOnline 裡的同一個 OnlinId 的 ReloadTime 是 10小時前的，就返回超時，否則就更新為當前時間&lt;br&gt;- 最後如果找不到相同的 OnlineId 就返回錯誤" style="whiteSpace=wrap;html=1;rounded=0;align=left;" parent="1" vertex="1">
+                    <mxGeometry x="240" y="540" width="300" height="130" as="geometry"/>
+                </mxCell>
+                <mxCell id="23" value="" style="edgeStyle=none;html=1;fontSize=12;" parent="1" source="20" target="22" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="20" value="&lt;font color=&quot;#ffffff&quot;&gt;從 sp_&lt;font style=&quot;&quot; face=&quot;Consolas, Courier New, monospace&quot;&gt;Coloris_Account_GetCustomerAndHierarchyStatus 拿到玩家跟其所有階層的 Status&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;&quot; face=&quot;Consolas, Courier New, monospace&quot;&gt;- 如果 Status 中包含 closed/suspend/deleted/!cash/compnayCap/streamPlayer 的話就返回錯誤&lt;/font&gt;&lt;/font&gt;" style="whiteSpace=wrap;html=1;rounded=0;align=left;" parent="1" vertex="1">
+                    <mxGeometry x="214" y="690" width="352" height="130" as="geometry"/>
+                </mxCell>
+                <mxCell id="25" value="" style="edgeStyle=none;html=1;fontSize=12;fontColor=#FF6666;" parent="1" source="22" target="24" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="22" value="sp_coloris_Account_RequestWithdrawal:&lt;br&gt;-&amp;nbsp; &lt;font color=&quot;#ff6666&quot;&gt;判斷是否為套利玩家？？&lt;/font&gt;&lt;br&gt;- 檢查提款金額是否在限制內&lt;br&gt;- 檢查是否有正在處理中的交易請求&lt;br&gt;- 檢查金額是否超過餘額&lt;br&gt;- 以上都通過，就新增交易請求到 TransactionRequest 裡" style="whiteSpace=wrap;html=1;rounded=0;align=left;" parent="1" vertex="1">
+                    <mxGeometry x="212" y="840" width="352" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="27" value="" style="edgeStyle=none;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#FF6666;" parent="1" source="24" target="26" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="24" value="&lt;font color=&quot;#ffffff&quot;&gt;sp_coloris_Account_AddSingleTransfer (deposit &amp;amp; withdraw 共用的sp):&lt;br&gt;- 根據不同的 TransactionType 拿到玩家的Id，匯率，交易狀態&lt;br&gt;- 如果 Outstanding 小於0 就返回錯誤&lt;br&gt;- 根據不同的 TransactionType 跟 TransactionStatus 更新 ExternalRefNo 跟生成 RefNo + ActionTypeText&lt;br&gt;- 新增資料到 Statement （記錄了CashIn,CashOut....）&lt;br&gt;- 利用 sp_Record_InsertBalanceHistory 新增資料到 BalanceHistory (cashBalanceDetla 是負數)&lt;br&gt;- 更新 CashSettled (主要更新的是TransferOut)&lt;br&gt;- 利用 sp_&lt;font style=&quot;font-size: 12px;&quot;&gt;Common_Transfer_UpdateDailyStatement 更新 DailyStatement 跟 新增資料到 DailyStatementHistory&lt;/font&gt;&lt;br&gt;-&amp;nbsp;&lt;/font&gt;" style="whiteSpace=wrap;html=1;rounded=0;align=left;" parent="1" vertex="1">
+                    <mxGeometry x="214" y="970" width="352" height="190" as="geometry"/>
+                </mxCell>
+                <mxCell id="26" value="&lt;div style=&quot;line-height: 19px;&quot;&gt;&lt;font color=&quot;#ffffff&quot;&gt;如果設定為sendAlertToIM的話就寄信（先獲取IM setting，然後通過TelegramBotClient寄信）&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;line-height: 19px;&quot;&gt;&lt;font color=&quot;#ffffff&quot;&gt;- 最後記錄 user action 到 UserActionRecord 裡&lt;/font&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;align=left;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry x="610" y="1005" width="180" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="28" value="withdraw 會在 Approve 前先扣錢（假設玩家目前的&lt;br&gt;錢包剩1000，玩家申請了1000塊的提款，如果申請後&lt;br&gt;沒有馬上扣錢，那玩家可以在Approved前還有錢可以&lt;br&gt;花）" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="527" y="40" width="300" height="70" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

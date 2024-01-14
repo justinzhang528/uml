@@ -1,0 +1,31 @@
+<mxfile host="65bd71144e">
+    <diagram id="UB-d15GC3HgjaktmipYr" name="Page-1">
+        <mxGraphModel dx="1002" dy="571" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="5" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="2" target="3">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="2" value="Promodia-&amp;gt;&quot;ProceedPromotion&quot;" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="290" y="30" width="233" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="6" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="3" target="4">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="3" value="- 利用 companyPromotionId 拿到 PromotionType 的 ClassName，CompanyPromtion 的period以及currency，客戶自己Promotion設定值以及 ClassName&lt;br&gt;- 把所有 PromotionTypeSetting 用反射生成實體後用責任鏈串起來&lt;br&gt;- 用反射生成 PromotionType （PromotionTypeSetting則是屬於PromotionType裡的屬性）" style="whiteSpace=wrap;html=1;rounded=0;align=left;" vertex="1" parent="1">
+                    <mxGeometry x="236.5" y="110" width="340" height="150" as="geometry"/>
+                </mxCell>
+                <mxCell id="8" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="4" target="7">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="4" value="- 檢查 PromotionRequest fromStatus -&amp;gt; toStatus (有效的狀態：waiting -&amp;gt; approved/rejected, approved -&amp;gt; completed)&lt;br&gt;- 如果 toStatus 是 approved的話，透過 sp_Promodia_Promotion_GetPromotionRequestDetailForApproveValidation 拿到 totalApprovedAmount&lt;br&gt;- 如果 toStatus 是 approved的話，透過 sp_Promodia_Promotion_GetPromotionRequestDetailForApproveValidation 拿到 totalApprovedAmount&lt;br&gt;-&amp;nbsp;ValidateAllSettingWhenApprove&lt;br&gt;- 檢查玩家以及其所有階層的Status是否是正常的（Closed/Suspend/Deleted/CompanyCap 都是不合法的）" style="whiteSpace=wrap;html=1;rounded=0;align=left;" vertex="1" parent="1">
+                    <mxGeometry x="178.25" y="280" width="456.5" height="170" as="geometry"/>
+                </mxCell>
+                <mxCell id="7" value="執行 sp_Promodia_Promotion_UpdatePromotionRequest:&lt;br&gt;&lt;br&gt;- 如果是 waiting-&amp;gt; approved 的話：更新 PromotionRequest，並執行 sp_Promodia_Promotion_CreatePromotionWalletWhenApproved：&lt;br&gt;&amp;nbsp; - 如果 deposit amount !=0&amp;nbsp; 的話：新增一條statement，新增balanceHistory，Update CashSettled，準備把錢從 Main Wallet 轉到 Promotion Wallet&lt;br&gt;&amp;nbsp; - 新增 balanceHistoryForPromotion，新增&amp;nbsp;PromotionCashSettled，新增&amp;nbsp;PromotionCashUsed，新增&amp;nbsp;PromotionTransfer&lt;br&gt;&amp;nbsp; -利用 statement 去更新 DailyStatement&lt;br&gt;&lt;br&gt;- 如果是 approved-&amp;gt;completed 的話：&lt;br&gt;&amp;nbsp; - 新增&amp;nbsp;BalanceHistoryForPromotion，Update PromotionRequest&lt;br&gt;&amp;nbsp; - 如果目前的 turnOver 大於 minTurnOver 就執行 sp_Sp_Promotion_AutoCompletePromotionWallet（更新 PromotionRequest）&amp;nbsp;&lt;br&gt;&lt;br&gt;&lt;span style=&quot;color: rgba(0, 0, 0, 0); font-family: monospace; font-size: 0px;&quot;&gt;- %3CmxGraphModel%3E%3Croot%3E%3CmxCell%20id%3D%220%22%2F%3E%3CmxCell%20id%3D%221%22%20parent%3D%220%22%2F%3E%3CmxCell%20id%3D%222%22%20value%3D%22-%20%E6%AA%A2%E6%9F%A5%20PromotionRequest%20fromStatus%20-%26amp%3Bgt%3B%20toStatus%20(%E6%9C%89%E6%95%88%E7%9A%84%E7%8B%80%E6%85%8B%EF%BC%9Awaiting%20-%26amp%3Bgt%3B%20approved%2Frejected%2C%20approved%20-%26amp%3Bgt%3B%20completed)%26lt%3Bbr%26gt%3B-%20%E5%A6%82%E6%9E%9C%20toStatus%20%E6%98%AF%20approved%E7%9A%84%E8%A9%B1%EF%BC%8C%E9%80%8F%E9%81%8E%20sp_Promodia_Promotion_GetPromotionRequestDetailForApproveValidation%20%E6%8B%BF%E5%88%B0%20totalApprovedAmount%26lt%3Bbr%26gt%3B-%20%E5%A6%82%E6%9E%9C%20toStatus%20%E6%98%AF%20approved%E7%9A%84%E8%A9%B1%EF%BC%8C%E9%80%8F%E9%81%8E%20sp_Promodia_Promotion_GetPromotionRequestDetailForApproveValidation%20%E6%8B%BF%E5%88%B0%20totalApprovedAmount%26lt%3Bbr%26gt%3B-%26amp%3Bnbsp%3BValidateAllSettingWhenApprove%26lt%3Bbr%26gt%3B-%20%E6%AA%A2%E6%9F%A5%E7%8E%A9%E5%AE%B6%E4%BB%A5%E5%8F%8A%E5%85%B6%E6%89%80%E6%9C%89%E9%9A%8E%E5%B1%A4%E7%9A%84Status%E6%98%AF%E5%90%A6%E6%98%AF%E6%AD%A3%E5%B8%B8%E7%9A%84%EF%BC%88Closed%2FSuspend%2FDeleted%2FCompanyCap%20%E9%83%BD%E6%98%AF%E4%B8%8D%E5%90%88%E6%B3%95%E7%9A%84%EF%BC%89%22%20style%3D%22whiteSpace%3Dwrap%3Bhtml%3D1%3Brounded%3D0%3Balign%3Dleft%3B%22%20vertex%3D%221%22%20parent%3D%221%22%3E%3CmxGeometry%20x%3D%22178.25%22%20y%3D%22280%22%20width%3D%22456.5%22%20height%3D%22170%22%20as%3D%22geometry%22%2F%3E%3C%2FmxCell%3E%3C%2Froot%3E%3C%2FmxGraphModel%3E&lt;/span&gt;&lt;font face=&quot;monospace&quot; color=&quot;rgba(0, 0, 0, 0)&quot;&gt;&lt;span style=&quot;font-size: 0px;&quot;&gt;Promodia_Promotion_UpdatePromotionRequest&lt;/span&gt;&lt;/font&gt;" style="whiteSpace=wrap;html=1;rounded=0;align=left;" vertex="1" parent="1">
+                    <mxGeometry x="178.25" y="470" width="456.5" height="270" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

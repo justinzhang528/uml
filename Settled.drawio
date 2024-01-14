@@ -1,0 +1,137 @@
+<mxfile host="65bd71144e">
+    <diagram id="Tk6fScx0N2_PU29kudcP" name="Page-1">
+        <mxGraphModel dx="670" dy="571" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="2" value="" style="edgeStyle=none;html=1;" parent="1" source="3" target="5" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="3" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;&quot;Settled&quot;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="41.25" y="40" width="160" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="55" value="" style="edgeStyle=none;html=1;" parent="1" source="5" target="52" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="5" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;ResultOrder()&lt;/font&gt;" style="whiteSpace=wrap;html=1;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry x="41.25" y="100" width="160" height="35" as="geometry"/>
+                </mxCell>
+                <mxCell id="22" value="" style="edgeStyle=none;html=1;" parent="1" source="9" target="21" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="9" value="GetCategory()&lt;br&gt;利用ProductType &amp;amp; GPID 取得 GameCategory" style="whiteSpace=wrap;html=1;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry x="37.5" y="230" width="160" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="24" value="" style="edgeStyle=none;html=1;" parent="1" source="21" target="23" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="21" value="&lt;font color=&quot;#ffffff&quot;&gt;更新 Request 的 ResultType：&lt;br&gt;- 用 sp_&lt;/font&gt;&lt;font style=&quot;font-size: 12px;&quot;&gt;&lt;font color=&quot;#ffffff&quot;&gt;&lt;span style=&quot;font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace;&quot;&gt;Yog_Seamless_GetBetSettleInfo 拿到 ResultType(draw/won/lost)&lt;br&gt;&lt;/span&gt;- 更新到 Request 的 ResultType&lt;/font&gt;&lt;br&gt;&lt;/font&gt;" style="whiteSpace=wrap;html=1;rounded=0;align=left;" parent="1" vertex="1">
+                    <mxGeometry x="10" y="300" width="220" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="27" value="" style="edgeStyle=none;html=1;" parent="1" source="23" target="26" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="37" value="" style="edgeStyle=none;html=1;" parent="1" source="23" target="36" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="23" value="Result()" style="whiteSpace=wrap;html=1;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="399" width="160" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="30" value="" style="edgeStyle=none;html=1;" parent="1" source="26" target="29" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="26" value="GetPlayerDetail()&lt;br&gt;獲取玩家資訊" style="whiteSpace=wrap;html=1;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry x="264.38" y="399" width="160" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="33" value="" style="edgeStyle=none;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="29" target="31" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="660" y="465"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="29" value="ResultOrder()" style="whiteSpace=wrap;html=1;rounded=0;align=center;" parent="1" vertex="1">
+                    <mxGeometry x="264.38" y="450" width="160" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="35" value="" style="edgeStyle=none;html=1;" parent="1" source="31" target="34" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="31" value="&lt;font color=&quot;#ffffff&quot;&gt;執行sp =&amp;gt; Seamless_SettleSboxxxBet:&lt;br&gt;- 如果在 MigratedSportsTransIdMapping 裏有存在 transfercode的話，就拿它的 transfercode&lt;br&gt;- 檢查 SboxxxBets 裏有沒有注單&lt;br&gt;- 檢查 SboxxxBets 裏的狀態是否已經結算，如果已經結算過就執行 sp =&amp;gt; Record_InsertSeamlessWalletError_1.0&lt;br&gt;-&amp;nbsp;&lt;span style=&quot;font-family: Söhne, ui-sans-serif, system-ui, -apple-system, &amp;quot;Segoe UI&amp;quot;, Roboto, Ubuntu, Cantarell, &amp;quot;Noto Sans&amp;quot;, sans-serif, &amp;quot;Helvetica Neue&amp;quot;, Arial, &amp;quot;Apple Color Emoji&amp;quot;, &amp;quot;Segoe UI Emoji&amp;quot;, &amp;quot;Segoe UI Symbol&amp;quot;, &amp;quot;Noto Color Emoji&amp;quot;;&quot;&gt;&lt;font style=&quot;font-size: 12px;&quot;&gt;計算賭注的佣金、折扣、贏得金額等相關資訊&lt;/font&gt;&lt;/span&gt;&lt;br&gt;- 執行 sp_Record_InsertBalanceHistory_1.0&lt;br&gt;- 如果&amp;nbsp;&lt;span style=&quot;font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace;&quot;&gt;&lt;font style=&quot;font-size: 12px;&quot;&gt;n&lt;/font&gt;&lt;/span&gt;&lt;span style=&quot;font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace;&quot;&gt;&lt;font style=&quot;font-size: 12px;&quot;&gt;ewPromotionRequestId=0 則&lt;/font&gt;&lt;/span&gt;更新 CashSettled，否則執行 sp_&lt;span style=&quot;font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace;&quot;&gt;&lt;font style=&quot;font-size: 12px;&quot;&gt;Record_InsertBalanceHistoryForPromotion 並更新&amp;nbsp;&lt;/font&gt;&lt;/span&gt;&lt;span style=&quot;font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace;&quot;&gt;&lt;font style=&quot;font-size: 12px;&quot;&gt;PromotionCashSettled&lt;/font&gt;&lt;/span&gt;&lt;span style=&quot;font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace;&quot;&gt;&lt;font style=&quot;font-size: 12px;&quot;&gt;&lt;br&gt;&lt;/font&gt;&lt;/span&gt;- 更新 SboxxxBets&lt;br&gt;- 如果 SboxxxResettleBet 裏已經有這筆注單且狀態是’Running'的話，就更新這張table&lt;br&gt;&lt;/font&gt;" style="whiteSpace=wrap;html=1;rounded=0;align=left;" parent="1" vertex="1">
+                    <mxGeometry x="500" y="509" width="310" height="271" as="geometry"/>
+                </mxCell>
+                <mxCell id="62" value="" style="edgeStyle=none;html=1;fontSize=12;fontColor=#FFFFFF;" parent="1" source="34" target="60" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="34" value="如果 newPromotionRequest &amp;gt;0 的話，執行 sp=&amp;gt; sp_Promotion_AutoCompletePromotionWallet_1.0.0:&lt;br&gt;- 更新 PromotionRequest&lt;br&gt;- 更新 PromotionCashSettled&lt;br&gt;- 新增資料到 Statement&lt;br&gt;- 新增資料到 BalanceHistory&lt;br&gt;- 更新 CashSettled&lt;br&gt;- 新增資料到 DailyStatement &amp;amp; DailyStatementHistory&lt;br&gt;- 新增資料到 PromotionTransfer" style="whiteSpace=wrap;html=1;rounded=0;align=left;" parent="1" vertex="1">
+                    <mxGeometry x="500" y="809" width="310" height="160" as="geometry"/>
+                </mxCell>
+                <mxCell id="39" value="" style="edgeStyle=none;html=1;" parent="1" source="36" target="38" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="41" value="" style="edgeStyle=none;html=1;entryX=0.456;entryY=-0.02;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="36" target="40" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="36" value="ResultReferral()" style="whiteSpace=wrap;html=1;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="619" width="160" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="38" value="&lt;font color=&quot;#ffffff&quot;&gt;執行sp_Account_SettleReferralLayer:&lt;br&gt;- 根據不同的 ProductType&amp;nbsp;&lt;span style=&quot;font-family: Söhne, ui-sans-serif, system-ui, -apple-system, &amp;quot;Segoe UI&amp;quot;, Roboto, Ubuntu, Cantarell, &amp;quot;Noto Sans&amp;quot;, sans-serif, &amp;quot;Helvetica Neue&amp;quot;, Arial, &amp;quot;Apple Color Emoji&amp;quot;, &amp;quot;Segoe UI Emoji&amp;quot;, &amp;quot;Segoe UI Symbol&amp;quot;, &amp;quot;Noto Color Emoji&amp;quot;;&quot;&gt;&lt;font style=&quot;font-size: 12px;&quot;&gt;獲取相關交易信息&lt;/font&gt;&lt;/span&gt;&lt;br&gt;&amp;nbsp;-&amp;nbsp;&lt;span style=&quot;font-family: Söhne, ui-sans-serif, system-ui, -apple-system, &amp;quot;Segoe UI&amp;quot;, Roboto, Ubuntu, Cantarell, &amp;quot;Noto Sans&amp;quot;, sans-serif, &amp;quot;Helvetica Neue&amp;quot;, Arial, &amp;quot;Apple Color Emoji&amp;quot;, &amp;quot;Segoe UI Emoji&amp;quot;, &amp;quot;Segoe UI Symbol&amp;quot;, &amp;quot;Noto Color Emoji&amp;quot;;&quot;&gt;&lt;font style=&quot;font-size: 12px;&quot;&gt;檢查是否已經為這筆注單進行了推薦層級的結算。如果已經結算就返回錯誤&lt;br&gt;&lt;/font&gt;&lt;/span&gt;-&amp;nbsp;&lt;span style=&quot;font-family: Söhne, ui-sans-serif, system-ui, -apple-system, &amp;quot;Segoe UI&amp;quot;, Roboto, Ubuntu, Cantarell, &amp;quot;Noto Sans&amp;quot;, sans-serif, &amp;quot;Helvetica Neue&amp;quot;, Arial, &amp;quot;Apple Color Emoji&amp;quot;, &amp;quot;Segoe UI Emoji&amp;quot;, &amp;quot;Segoe UI Symbol&amp;quot;, &amp;quot;Noto Color Emoji&amp;quot;;&quot;&gt;&lt;font style=&quot;font-size: 12px;&quot;&gt;計算推薦獎金的金額，並根據賭注結果、賭注金額等信息進行計算&lt;br&gt;&lt;/font&gt;&lt;/span&gt;- 計算完後Merged 到 ReferralSummary&lt;br&gt;- 如果是 StockPlayer 則更新 StockReferralExpense&lt;br&gt;- 更新 SboxxxBets 的&amp;nbsp;&lt;span style=&quot;font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace;&quot;&gt;&lt;font style=&quot;font-size: 12px;&quot;&gt;ReferralLayerPercentageHistoryIds&lt;/font&gt;&lt;/span&gt;&lt;/font&gt;" style="whiteSpace=wrap;html=1;rounded=0;align=left;" parent="1" vertex="1">
+                    <mxGeometry x="240" y="500" width="250.62" height="170" as="geometry"/>
+                </mxCell>
+                <mxCell id="43" value="" style="edgeStyle=none;html=1;" parent="1" source="40" target="42" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="40" value="&lt;font color=&quot;#ffffff&quot;&gt;判斷以下條件，如果都為 True，則透過 sp_&lt;span style=&quot;font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace;&quot;&gt;&lt;font style=&quot;font-size: 12px;&quot;&gt;Yog_MaxWinLose_UpdateGmPlayerStatement&lt;/font&gt;&lt;/span&gt;更新xxxPlayerStatement：&lt;br&gt;- isMaxWinLoseEnable&lt;br&gt;- isCreditPlayer&lt;br&gt;- isProductValidForMaxWinLoseSetting （遊戲種類為 Live_Casino / Games / Seamless_GameProvider 且 Gpid 是 46 或&amp;nbsp;GameProviderType 是 Sports 的 ）&lt;/font&gt;" style="whiteSpace=wrap;html=1;rounded=0;align=left;" parent="1" vertex="1">
+                    <mxGeometry x="20" y="675" width="280" height="140" as="geometry"/>
+                </mxCell>
+                <mxCell id="45" value="" style="edgeStyle=none;html=1;" parent="1" source="42" target="44" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="42" value="如果 ResultType 不是 draw，執行 sp=&amp;gt; Yog_Main_SettleStockAgentCommision&lt;br&gt;- 更新代理佣金&lt;br&gt;- 更新 CashSettled&lt;br&gt;- 更新 xxxResettledBet" style="whiteSpace=wrap;html=1;rounded=0;align=left;" parent="1" vertex="1">
+                    <mxGeometry x="21.25" y="829" width="218.75" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="47" value="" style="edgeStyle=none;html=1;" parent="1" source="44" target="46" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="44" value="取消無支付的 PeruShop 注單" style="whiteSpace=wrap;html=1;rounded=0;align=left;" parent="1" vertex="1">
+                    <mxGeometry x="30" y="939" width="200" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="51" value="" style="edgeStyle=none;html=1;" parent="1" source="46" target="50" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="46" value="&lt;font color=&quot;#ffffff&quot;&gt;&lt;span style=&quot;text-align: center;&quot;&gt;GetUnsettledOrder()：&lt;/span&gt;&lt;br&gt;- 獲取所有未結算的注單，包含所有層級&lt;br&gt;&lt;br&gt;- Construct 所有階層的 DailyStatement&lt;br&gt;- 利用 sp_&lt;font style=&quot;&quot;&gt;&lt;font face=&quot;Consolas, Courier New, monospace&quot;&gt;Yog_GameProvider_UpsertDailyStatement&amp;nbsp;更新 DailyStatement&lt;/font&gt;&lt;/font&gt;&lt;/font&gt;" style="whiteSpace=wrap;html=1;rounded=0;align=left;" parent="1" vertex="1">
+                    <mxGeometry x="10" y="989" width="240" height="131" as="geometry"/>
+                </mxCell>
+                <mxCell id="50" value="GetPlayerBalance()&lt;br&gt;- 拿到玩家錢包的錢後返回" style="whiteSpace=wrap;html=1;rounded=0;align=left;" parent="1" vertex="1">
+                    <mxGeometry x="20" y="1140" width="220" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="59" value="" style="edgeStyle=none;html=1;" parent="1" source="52" target="58" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="52" value="DecodeAccount()&lt;br&gt;從Request提取UserInfo (WebId, Username)" style="whiteSpace=wrap;html=1;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry x="37.5" y="150" width="162.5" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="57" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="52" target="9" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="480" y="320" as="sourcePoint"/>
+                        <mxPoint x="530" y="270" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="58" value="&lt;span style=&quot;color: rgb(255, 255, 255);&quot;&gt;- 用 'yy_' 分割 Request 的 username&lt;/span&gt;&lt;br style=&quot;color: rgb(255, 255, 255);&quot;&gt;&lt;span style=&quot;color: rgb(255, 255, 255);&quot;&gt;- 分割後拿到 2 個 elements 的話，第1個設為 webId，第2個設為 username&lt;/span&gt;&lt;br style=&quot;color: rgb(255, 255, 255);&quot;&gt;&lt;span style=&quot;color: rgb(255, 255, 255);&quot;&gt;- 分割後拿到 2 個以上的 elements 的話，username 設為 &quot;把第三個之後的element用yy_連接起來&quot;&amp;nbsp;&lt;/span&gt;" style="whiteSpace=wrap;html=1;rounded=0;align=left;" parent="1" vertex="1">
+                    <mxGeometry x="264.38" y="125" width="270" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="64" value="" style="edgeStyle=none;html=1;fontSize=12;fontColor=#FFFFFF;" parent="1" source="60" target="63" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="60" value="&lt;font color=&quot;#ff3333&quot;&gt;如果 newPromotionRequest &amp;gt;0 的話，執行&amp;nbsp; sp_Y&lt;span style=&quot;font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace;&quot;&gt;&lt;font style=&quot;font-size: 12px;&quot;&gt;og_CalculateRefereelPerformance&lt;/font&gt;&lt;/span&gt;:&lt;/font&gt;" style="whiteSpace=wrap;html=1;rounded=0;align=left;" parent="1" vertex="1">
+                    <mxGeometry x="500" y="983.5" width="310" height="71" as="geometry"/>
+                </mxCell>
+                <mxCell id="63" value="&lt;font color=&quot;#ff3333&quot;&gt;&lt;font style=&quot;font-size: 12px;&quot;&gt;&lt;span style=&quot;font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace;&quot;&gt;IF&lt;/span&gt;&lt;span style=&quot;font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace;&quot;&gt; @isCashOut &lt;/span&gt;&lt;span style=&quot;font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace;&quot;&gt;=&lt;/span&gt;&lt;span style=&quot;font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace;&quot;&gt; &lt;/span&gt;&lt;span style=&quot;font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace;&quot;&gt;0&lt;/span&gt;&lt;span style=&quot;font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace;&quot;&gt; &lt;/span&gt;&lt;span style=&quot;font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace;&quot;&gt;AND&lt;/span&gt;&lt;span style=&quot;font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace;&quot;&gt; @walletGameType &lt;/span&gt;&lt;span style=&quot;font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace;&quot;&gt;=&lt;/span&gt;&lt;span style=&quot;font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace;&quot;&gt; &lt;/span&gt;&lt;span style=&quot;font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace;&quot;&gt;0&lt;/span&gt;&lt;span style=&quot;font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace;&quot;&gt; &lt;/span&gt;&lt;span style=&quot;font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace;&quot;&gt;AND&lt;/span&gt;&lt;span style=&quot;font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace;&quot;&gt; @walletProductType &lt;/span&gt;&lt;span style=&quot;font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace;&quot;&gt;=&lt;/span&gt;&lt;span style=&quot;font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace;&quot;&gt; &lt;/span&gt;&lt;span style=&quot;font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace;&quot;&gt;0&lt;/span&gt;&lt;span style=&quot;font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace;&quot;&gt; &lt;/span&gt;&lt;span style=&quot;font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace;&quot;&gt;AND&lt;/span&gt;&lt;span style=&quot;font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace;&quot;&gt; @newPromotionRequestId &lt;/span&gt;&lt;span style=&quot;font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace;&quot;&gt;=&lt;/span&gt;&lt;span style=&quot;font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace;&quot;&gt; &lt;/span&gt;&lt;span style=&quot;font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace;&quot;&gt;0&lt;/span&gt;&lt;span style=&quot;font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace;&quot;&gt; &lt;/span&gt;&lt;span style=&quot;font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace;&quot;&gt;AND&lt;/span&gt;&lt;span style=&quot;font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace;&quot;&gt; @isApiPlayer &lt;/span&gt;&lt;span style=&quot;font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace;&quot;&gt;=&lt;/span&gt;&lt;span style=&quot;font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace;&quot;&gt; &lt;/span&gt;&lt;/font&gt;&lt;span style=&quot;font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace;&quot;&gt;&lt;font size=&quot;3&quot;&gt;0&lt;/font&gt;&lt;br&gt;&lt;/span&gt;執行 s&lt;span style=&quot;font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace;&quot;&gt;&lt;font style=&quot;font-size: 12px;&quot;&gt;p_Main_InsertWithdrawalLimitAction&lt;/font&gt;&lt;/span&gt;&lt;/font&gt;" style="whiteSpace=wrap;html=1;rounded=0;align=left;" parent="1" vertex="1">
+                    <mxGeometry x="500" y="1070" width="310" height="91" as="geometry"/>
+                </mxCell>
+                <mxCell id="65" value="-&amp;nbsp;&lt;span style=&quot;font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace; font-size: 14px;&quot;&gt;MigratedSportsTransIdMapping 目前在用不到&lt;br&gt;-betType 666: 射龍門&lt;br&gt;- PT：階層%&lt;br&gt;- commision: 只要有下注就會拿到的金額&lt;br&gt;- cashout:投降，不算turnover&lt;br&gt;-&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: rgb(31, 31, 31); font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace; font-size: 14px;&quot;&gt;&lt;font color=&quot;#ff9999&quot;&gt;Sp_Promotion_AutoCompletePromotionWallet&lt;/font&gt;&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
+                    <mxGeometry x="670" y="95" width="340" height="185" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

@@ -1,0 +1,25 @@
+<mxfile host="65bd71144e">
+    <diagram id="G36O9TPjFv86lIqbXAyt" name="Page-1">
+        <mxGraphModel dx="1002" dy="571" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="5" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="2" target="4">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="2" value="Promodia-&amp;gt;&quot;ApplyPromotion&quot;" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="290" y="30" width="233" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="7" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="4" target="6">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="4" value="- 利用 companyPromotionId 拿到 PromotionType 的 ClassName，CompanyPromtion 的period以及currency，客戶自己Promotion設定值以及 ClassName&lt;br&gt;- 把所有 PromotionTypeSetting 用反射生成實體後用責任鏈串起來&lt;br&gt;- 用反射生成 PromotionType （PromotionTypeSetting則是屬於PromotionType裡的屬性）" style="whiteSpace=wrap;html=1;rounded=0;align=left;" vertex="1" parent="1">
+                    <mxGeometry x="236.5" y="110" width="340" height="150" as="geometry"/>
+                </mxCell>
+                <mxCell id="6" value="執行 sp_Promodia_Promotion_GetPlayerPromotionDetailForValidate 拿到驗證資訊&lt;br&gt;&lt;br&gt;默認的檢查機制：currency是否相同/申請日期是否在有效期限內（每一種promotion都有不一樣的檢查機制）：&lt;br&gt;&lt;br&gt;- sp_Promodia_Promotion_GetFirstTimeDepositInformation（從Statement裡拿到最早一筆deposit的depositId，再去PromotionRequest·檢查是否有出現用這筆depositId申請過）&lt;br&gt;&lt;br&gt;- sp_Promodia_Promotion_GetFirstDailyDepositInformation（從Statement裡拿到今天最早一筆deposit的depositId，再去PromotionRequest·檢查是否有出現用這筆depositId申請過）&lt;br&gt;&lt;br&gt;- sp_Promodia_Promotion_GetSingleDepositInformation（從Statement裡拿到最後一筆deposit的depositId，再去PromotionRequest·檢查是否有出現用這筆depositId申請過）&lt;br&gt;&lt;br&gt;- sp_Promodia_Promotion_CheckIsPlayerApplyRebate：檢查PromotionRequest裡有沒有申請過Rebate（daily/weekly/monthly）&lt;br&gt;- 獲取&amp;nbsp;GetPlayerxxxTurnOverByRebateInterval （如果是daily的話計算前一天的TurnOver，如果是weekly的話計算前一周的turnOver，如果是monthly的話計算上一個月的turnOver）&lt;br&gt;-&lt;font color=&quot;#ff6666&quot;&gt; 目前找不到哪裡有用TurnOver計算是否可以申請Rebate？？&lt;/font&gt;&lt;br&gt;&lt;br&gt;-&amp;nbsp;ValidateApplySetting&lt;br&gt;&lt;br&gt;- sp_ApplyPromotion:&lt;br&gt;&amp;nbsp; - 會先檢查 Register bonus 有沒有達到要求，檢查通過後就把資料塞到 PromotionRequest&lt;br&gt;&amp;nbsp; - &lt;font color=&quot;#ff6666&quot;&gt;如果 PromotionType是 Referral 的話，會做額外的事情？？&lt;/font&gt;" style="whiteSpace=wrap;html=1;rounded=0;align=left;" vertex="1" parent="1">
+                    <mxGeometry x="121.5" y="290" width="570" height="360" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

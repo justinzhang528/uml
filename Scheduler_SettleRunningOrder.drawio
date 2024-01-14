@@ -1,0 +1,19 @@
+<mxfile host="65bd71144e">
+    <diagram id="LnBsf-dXArW5KWfcUuB2" name="Page-1">
+        <mxGraphModel dx="348" dy="571" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="5" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="3" target="4">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="3" value="SettleRunningOrder" style="whiteSpace=wrap;html=1;rounded=0;align=center;" parent="1" vertex="1">
+                    <mxGeometry x="320" y="30" width="150" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="4" value="- 分別從YY3的 SboSportBets, SboCasinoBets, SboGamesBets, SboVirtualSportBets, SboSeamlessRunningBets, SboThirdPartySportBets 拿到 Status 為 Running 的注單&lt;br&gt;- 然後從 Sbo(Triton)&amp;nbsp; 拿跟上面相同的注單 （如果是thirdPartySports 的話會從 Mars 拿）&lt;br&gt;- 最後進行同步的動作" style="whiteSpace=wrap;html=1;rounded=0;align=left;" vertex="1" parent="1">
+                    <mxGeometry x="242" y="90" width="306" height="110" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

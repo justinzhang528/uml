@@ -1,0 +1,40 @@
+<mxfile host="65bd71144e">
+    <diagram id="teszuPsZ5ThQxpp2naT3" name="Page-1">
+        <mxGraphModel dx="772" dy="571" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="4" value="" style="edgeStyle=none;html=1;fontSize=14;" parent="1" source="2" target="3" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="2" value="&quot;player/v2/transaction/raise-deposit&quot;" style="whiteSpace=wrap;html=1;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry x="277" y="40" width="214" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="6" value="" style="edgeStyle=none;html=1;fontSize=14;" parent="1" source="3" target="5" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="3" value="&lt;font color=&quot;#ffffff&quot;&gt;- req.GetUserData() 的 JWT 是利用 Filter 拿到 Header 的 Authorization 欄位的值&lt;br&gt;&lt;/font&gt;&lt;br&gt;BankDepositRequest -&amp;gt; IsValid:&lt;br&gt;- 檢查 username/currency/IP 是否為 null&lt;br&gt;- 檢查 WebId 的值（不能小於 0）&lt;br&gt;- 檢查 Username/domain/BankInfo 的格式" style="whiteSpace=wrap;html=1;rounded=0;align=left;" parent="1" vertex="1">
+                    <mxGeometry x="264" y="110" width="240" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="8" value="" style="edgeStyle=none;html=1;fontSize=14;" parent="1" source="5" target="7" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="5" value="CheckPlayerIsOnline (WebId, CustomerId, OnlineId)&lt;br&gt;- 檢查 OnlineId （不能小於0）&lt;br&gt;- 檢查跟 PlayerOnline 裡最新一筆的 OnlineId 是否一樣 （不一樣就返回錯誤）&lt;br&gt;- 把 PlayerOnline 裡不一樣的 OnlineId 都移到 PlayerOnlineHistory 裡面&lt;br&gt;- 如果 PlayerOnline 裡的同一個 OnlinId 的 ReloadTime 是 10小時前的，就返回超時，否則就更新為當前時間&lt;br&gt;- 最後如果找不到相同的 OnlineId 就返回錯誤" style="whiteSpace=wrap;html=1;rounded=0;align=left;" parent="1" vertex="1">
+                    <mxGeometry x="234" y="240" width="300" height="130" as="geometry"/>
+                </mxCell>
+                <mxCell id="10" value="" style="edgeStyle=none;html=1;fontSize=12;fontColor=#FF6666;" parent="1" source="7" target="9" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="7" value="&lt;font color=&quot;#ffffff&quot;&gt;- 從 sp_Coloris_Account_GetAvailableCurrency 拿到客戶自己設定的 Currency 資訊&lt;br&gt;- 拿到的 Currency 為 null 返回錯誤&lt;br&gt;- deposit 的金額不在限制內/不允許小數點的設定但出現小數點的金額就返回錯誤&lt;br&gt;- 從 sp_&lt;/font&gt;&lt;font style=&quot;&quot;&gt;&lt;font style=&quot;color: rgb(255, 255, 255);&quot; face=&quot;Consolas, Courier New, monospace&quot;&gt;Coloris_Account_GetCustomerAndHierarchyStatus 拿到玩家跟其所有階層的 Status&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;color: rgb(255, 255, 255);&quot; face=&quot;Consolas, Courier New, monospace&quot;&gt;- 如果 Status 中包含 closed/suspend/deleted/!cash/compnayCap/streamPlayer 的話就返回錯誤&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;&quot; face=&quot;Consolas, Courier New, monospace&quot;&gt;&lt;font color=&quot;#ffffff&quot;&gt;- &lt;/font&gt;&lt;font color=&quot;#ff9999&quot;&gt;AutoBankManagement.GenerateAmount()，現在已經不再用到了，是 AutoDeposit 的機制&amp;nbsp;&lt;/font&gt;&lt;/font&gt;&lt;br&gt;&lt;/font&gt;" style="whiteSpace=wrap;html=1;rounded=0;align=left;" parent="1" vertex="1">
+                    <mxGeometry x="211" y="400" width="346" height="190" as="geometry"/>
+                </mxCell>
+                <mxCell id="9" value="&lt;font color=&quot;#ffffff&quot; style=&quot;font-size: 12px;&quot;&gt;&lt;div style=&quot;font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace; line-height: 19px;&quot;&gt;sp_Coloris_Account_RequestDeposit:&lt;/div&gt;&lt;div style=&quot;font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace; line-height: 19px;&quot;&gt;- 檢查玩家=&amp;gt; 不存在/有重複/不是Cash玩家，就返回錯誤&lt;/div&gt;&lt;div style=&quot;font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace; line-height: 19px;&quot;&gt;- 如果有正在等待處理的交易就返回錯誤&lt;/div&gt;&lt;div style=&quot;font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace; line-height: 19px;&quot;&gt;- 從CompanyFlowDefaultSetting &amp;amp; companyFlowCustomizedSetting裡拿到 PropertyName 為 DepositeReferenceNumber/SlipUpload/DepositTime&lt;/div&gt;&lt;div style=&quot;font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace; line-height: 19px;&quot;&gt;- 如果這 3 個 PropertyName 設定為 isRequired 且值為空的話返回錯誤 (檢查deposit頁面的對應的三個欄位)&lt;/div&gt;&lt;div style=&quot;font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace; line-height: 19px;&quot;&gt;- 如果玩家在註冊頁面，且設定了銀行賬戶的唯一性，就檢查是否已經用同一個銀行賬戶註冊過&lt;/div&gt;&lt;div style=&quot;font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace; line-height: 19px;&quot;&gt;- 前者都通過的話，新增 deposit 的 request 到 transactionRequest 裡面&lt;/div&gt;&lt;div style=&quot;font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace; line-height: 19px;&quot;&gt;- 新增資料成功後如果設定為sendAlertToIM的話就寄信（先獲取IM setting，然後通過TelegramBotClient寄信）&lt;/div&gt;&lt;div style=&quot;font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace; line-height: 19px;&quot;&gt;- 最後記錄 user action 到 UserActionRecord 裡（風控：同一個玩家如果用相同IP跟FingerPrint在同一天進行deposit，可能會是套利的玩家，可能需要注意）&lt;/div&gt;&lt;/font&gt;" style="whiteSpace=wrap;html=1;rounded=0;align=left;" parent="1" vertex="1">
+                    <mxGeometry x="211" y="620" width="346" height="320" as="geometry"/>
+                </mxCell>
+                <mxCell id="11" value="deposit 會在 Approved 後才進賬" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="534" y="50" width="200" height="30" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

@@ -1,0 +1,31 @@
+<mxfile host="65bd71144e">
+    <diagram id="RwCIC-h6jvfZC-bp-ETE" name="Page-1">
+        <mxGraphModel dx="1822" dy="1038" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="6" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="2" target="5">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="2" value="&lt;div style=&quot;display: flex; line-height: 20px; padding-left: 8px; gap: 12px; user-select: text; margin-top: 2px; color: rgb(232, 234, 237); font-family: &amp;quot;Segoe UI&amp;quot;, Tahoma, sans-serif; text-align: start; background-color: rgb(40, 40, 40);&quot; class=&quot;row&quot;&gt;&lt;div style=&quot;word-break: break-all; display: flex; align-items: center; gap: 2px;&quot; class=&quot;header-value&quot;&gt;/player/v2/get-playable-games&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;/div&gt;&lt;div style=&quot;display: flex; line-height: 20px; padding-left: 8px; gap: 12px; user-select: text; color: rgb(232, 234, 237); font-family: &amp;quot;Segoe UI&amp;quot;, Tahoma, sans-serif; text-align: start; background-color: rgb(40, 40, 40);&quot; class=&quot;row&quot;&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="290" y="40" width="200" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="8" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="5" target="7">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="5" value="- 用domain拿到webId，如果db裡不存在domain的話返回錯誤" style="whiteSpace=wrap;html=1;rounded=0;align=left;" vertex="1" parent="1">
+                    <mxGeometry x="290" y="110" width="200" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="10" value="" style="edgeStyle=none;html=1;fontSize=12;" edge="1" parent="1" source="7" target="9">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="7" value="- 如果貨幣是空的/TMP的話，設定 isGetAllGame 為 true&lt;br&gt;&lt;br&gt;執行 sp_&lt;span style=&quot;color: rgb(204, 204, 204); font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace;&quot;&gt;&lt;font style=&quot;font-size: 12px;&quot;&gt;Coloris_GameProvider_GetPlayableGames：&lt;br&gt;- 拿到customerSettings的CapStatus的value&lt;br&gt;- 如果gameTranslation裡找不到的語言，就預設為en&lt;br&gt;- 從 AllGames 裡拿到屬於客戶的所有遊戲&lt;br&gt;&lt;br&gt;&lt;/font&gt;&lt;/span&gt;" style="whiteSpace=wrap;html=1;rounded=0;align=left;" vertex="1" parent="1">
+                    <mxGeometry x="220" y="180" width="340" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="9" value="- 替換 GameIconUrl&lt;br&gt;&lt;font style=&quot;&quot;&gt;&lt;font face=&quot;Consolas, Courier New, monospace&quot;&gt;&lt;font color=&quot;#cccccc&quot;&gt;- 如果不是開發環境的話，就&lt;/font&gt;&lt;font color=&quot;#ff6666&quot;&gt;FilterSportsGameForProductionOr93Production()&lt;/font&gt;&lt;br&gt;&lt;/font&gt;-&lt;font color=&quot;#ff6666&quot;&gt;&amp;nbsp;FilterGameWithOutLobb()&lt;/font&gt;&lt;br&gt;- 根據 customerSettings 裡的&amp;nbsp;IsKHRHideSboSports 來篩選遊戲&lt;br&gt;- &lt;font color=&quot;#ff6666&quot;&gt;根據 Currency 是否為&amp;nbsp;PHP 來篩選遊戲&lt;/font&gt;&lt;br&gt;&lt;/font&gt;" style="whiteSpace=wrap;html=1;rounded=0;align=left;" vertex="1" parent="1">
+                    <mxGeometry x="220" y="320" width="340" height="110" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

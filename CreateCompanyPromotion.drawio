@@ -1,0 +1,25 @@
+<mxfile host="65bd71144e">
+    <diagram id="t39cKKsB2RvAhlgOJrdN" name="Page-1">
+        <mxGraphModel dx="1002" dy="571" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="4" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="2" target="3">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="2" value="Promodia-&amp;gt;&quot;CreateCompanyPromotion&quot;" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="290" y="30" width="233" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="6" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="3" target="5">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="3" value="- 利用 PromotionTypeId 拿到 PromotionType 的 ClassName 以及 其底下的所有 PromotionTypeSetting 的默認值以及ClassName&lt;br&gt;- 把所有 PromotionTypeSetting 用反射生成實體後用責任鏈串起來&lt;br&gt;- 用反射生成 PromotionType （PromotionTypeSetting則是屬於PromotionType裡的屬性）&lt;br&gt;- 檢查前端 request 的WebId，Status 以及開始日期與結束日期&lt;br&gt;- 檢查前端 request 進來的所有 setting 是否有缺" style="whiteSpace=wrap;html=1;rounded=0;align=left;" vertex="1" parent="1">
+                    <mxGeometry x="236.5" y="110" width="340" height="150" as="geometry"/>
+                </mxCell>
+                <mxCell id="5" value="利用 sp_Promodia_Promotion_CreateCompanyPromotion創建CompanyPromotion：&lt;br&gt;- &lt;font color=&quot;#ff9999&quot;&gt;Active 中的同 Curreny 以及 同時期的 Register Bonus/Referral 不能重複&lt;/font&gt;&lt;br&gt;&lt;span style=&quot;color: rgba(0, 0, 0, 0); font-family: monospace; font-size: 0px;&quot;&gt;%3CmxGraphModel%3E%3Croot%3E%3CmxCell%20id%3D%220%22%2F%3E%3CmxCell%20id%3D%221%22%20parent%3D%220%22%2F%3E%3CmxCell%20id%3D%222%22%20value%3D%22-%20%E5%88%A9%E7%94%A8%20PromotionTypeId%20%E6%8B%BF%E5%88%B0%20PromotionType%20%E7%9A%84%20ClassName%20%E4%BB%A5%E5%8F%8A%20%E5%85%B6%E5%BA%95%E4%B8%8B%E7%9A%84%E6%89%80%E6%9C%89%20PromotionTypeSetting%20%E7%9A%84%E9%BB%98%E8%AA%8D%E5%80%BC%E4%BB%A5%E5%8F%8AClassName%26lt%3Bbr%26gt%3B-%20%E6%8A%8A%E6%89%80%E6%9C%89%20PromotionTypeSetting%20%E7%94%A8%E5%8F%8D%E5%B0%84%E7%94%9F%E6%88%90%E5%AF%A6%E9%AB%94%E5%BE%8C%E7%94%A8%E8%B2%AC%E4%BB%BB%E9%8F%88%E4%B8%B2%E8%B5%B7%E4%BE%86%26lt%3Bbr%26gt%3B-%20%E7%94%A8%E5%8F%8D%E5%B0%84%E7%94%9F%E6%88%90%20PromotionType%20%EF%BC%88PromotionTypeSetting%E5%89%87%E6%98%AF%E5%B1%AC%E6%96%BCPromotionType%E8%A3%A1%E7%9A%84%E5%B1%AC%E6%80%A7%EF%BC%89%26lt%3Bbr%26gt%3B-%20%E6%AA%A2%E6%9F%A5%E5%89%8D%E7%AB%AF%20request%20%E7%9A%84WebId%EF%BC%8CStatus%20%E4%BB%A5%E5%8F%8A%E9%96%8B%E5%A7%8B%E6%97%A5%E6%9C%9F%E8%88%87%E7%B5%90%E6%9D%9F%E6%97%A5%E6%9C%9F%26lt%3Bbr%26gt%3B-%20%E6%AA%A2%E6%9F%A5%E5%89%8D%E7%AB%AF%20request%20%E9%80%B2%E4%BE%86%E7%9A%84%E6%89%80%E6%9C%89%20setting%20%E6%98%AF%E5%90%A6%E6%9C%89%E7%BC%BA%22%20style%3D%22whiteSpace%3Dwrap%3Bhtml%3D1%3Brounded%3D0%3Balign%3Dleft%3B%22%20vertex%3D%221%22%20parent%3D%221%22%3E%3CmxGeometry%20x%3D%22236.5%22%20y%3D%22110%22%20width%3D%22340%22%20height%3D%22150%22%20as%3D%22geometry%22%2F%3E%3C%2FmxCell%3E%3C%2Froot%3E%3C%2FmxGraphModel%3E&lt;/span&gt;" style="whiteSpace=wrap;html=1;rounded=0;align=left;" vertex="1" parent="1">
+                    <mxGeometry x="236.5" y="280" width="340" height="120" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

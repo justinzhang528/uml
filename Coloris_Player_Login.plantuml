@@ -3,8 +3,7 @@
 :"v2/player-login";
 : LoginAsync; 
 if (CheckPlayerIsOnline
-邏輯寫在sp Coloris_Online_CheckPlayerIsOnline裏面，
-回傳 ErrorCode) then (ErrorCode!=0 不合法)
+檢查如果玩家是否掛機超過10小時或是用非法的OnlineId進行登入) then (ErrorCode!=0 不合法)
   :回傳Error;
   kill
 else (ErrorCode==0 合法)
@@ -34,7 +33,7 @@ else (ErrorCode==0 合法)
   else (GameProviderId<=50)
     :用Yog的方式登入-
     利用 sp Coloris_Online_RequestSSO 拿到SsoID跟SsoKey
-    然後用玩家資訊跟SSO登入到Yog Server拿到Response
+    然後用玩家資訊跟SSO登入到Yog Server（這邊會Call到Yog的Login）拿到Response
     然後利用GetThemeOddstyle()拿到oddstyle
     最後利用loginUrl,platformUrl,oddstyle組出URL
     組URL時會先檢查loginUrl是否可以訪問到

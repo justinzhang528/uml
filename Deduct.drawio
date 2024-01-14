@@ -1,0 +1,92 @@
+<mxfile host="65bd71144e">
+    <diagram id="o2MMHyEgyMEgaaB2RfWF" name="Page-1">
+        <mxGraphModel dx="1002" dy="571" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="4" value="" style="edgeStyle=none;html=1;" parent="1" source="2" target="3" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="2" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;&quot;Deduct&quot;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="176.87" y="40" width="160" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="6" value="" style="edgeStyle=none;html=1;fontSize=14;" parent="1" source="3" target="5" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="3" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;DeductCredit()&lt;/font&gt;" style="whiteSpace=wrap;html=1;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry x="176.87" y="100" width="160" height="35" as="geometry"/>
+                </mxCell>
+                <mxCell id="8" value="" style="edgeStyle=none;html=1;fontSize=14;" parent="1" source="5" target="7" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="27" value="" style="edgeStyle=none;html=1;" parent="1" source="5" target="26" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="5" value="DecodeAccount()&lt;br&gt;從Request提取UserInfo (WebId, Username)" style="whiteSpace=wrap;html=1;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry x="175.62" y="160" width="162.5" height="90" as="geometry"/>
+                </mxCell>
+                <mxCell id="10" value="" style="edgeStyle=none;html=1;fontSize=14;" parent="1" source="7" target="9" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="7" value="&lt;font color=&quot;#ffffff&quot;&gt;- 利用ProductType &amp;amp; GPID 取得 GameCategory&lt;br&gt;- 再判斷是否為 fishGame&lt;/font&gt;" style="whiteSpace=wrap;html=1;rounded=0;align=left;" parent="1" vertex="1">
+                    <mxGeometry x="130" y="290" width="260" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="14" value="" style="edgeStyle=none;html=1;fontSize=14;" parent="1" source="9" target="13" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="23" value="" style="edgeStyle=none;html=1;fontSize=14;" parent="1" source="9" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="255.62453333333337" y="728" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="9" value="PlaceBet()" style="whiteSpace=wrap;html=1;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry x="175.62" y="368" width="160" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="18" value="" style="edgeStyle=none;html=1;fontSize=14;" parent="1" source="13" target="17" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="13" value="&lt;font color=&quot;#ffffff&quot;&gt;GetPlayerDetail()：&lt;br&gt;- 利用 sp_&lt;font style=&quot;font-size: 12px;&quot;&gt;&lt;span style=&quot;font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace;&quot;&gt;Yog_Common_GetPlayerDetail&lt;/span&gt;獲取玩家資訊&lt;/font&gt;&lt;/font&gt;" style="whiteSpace=wrap;html=1;rounded=0;align=left;" parent="1" vertex="1">
+                    <mxGeometry x="470" y="359" width="240" height="58" as="geometry"/>
+                </mxCell>
+                <mxCell id="29" value="" style="edgeStyle=none;html=1;fontSize=12;" parent="1" source="17" target="28" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="17" value="&lt;font color=&quot;#ffffff&quot;&gt;判斷以下條件，如果都為 True，則透過 sp_&lt;span style=&quot;font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace;&quot;&gt;&lt;font style=&quot;font-size: 12px;&quot;&gt;Yog_MaxWinLose_UpdatexxDailyResetPlayerStatement&lt;/font&gt;&lt;/span&gt;&lt;span style=&quot;font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace;&quot;&gt;&lt;font style=&quot;font-size: 12px;&quot;&gt;&amp;nbsp;&lt;/font&gt;&lt;/span&gt;Merge xxxPlayerStatement：&lt;br&gt;- isMaxWinLoseEnable&lt;br&gt;- isCreditPlayer&lt;br&gt;- isProductValidForMaxWinLoseSetting （遊戲種類為 Live_Casino / Games / Seamless_GameProvider 且 Gpid 是 46 或&amp;nbsp;GameProviderType 是 Sports 的 ）&lt;/font&gt;" style="whiteSpace=wrap;html=1;rounded=0;align=left;" parent="1" vertex="1">
+                    <mxGeometry x="400" y="440" width="380" height="130" as="geometry"/>
+                </mxCell>
+                <mxCell id="20" value="&lt;font color=&quot;#ffffff&quot;&gt;- 用 sp_&lt;font face=&quot;Consolas, Courier New, monospace&quot;&gt;GetRunningPromotionWithPromotionWallet 拿到&amp;nbsp;promotionRequestId&lt;br&gt;&lt;/font&gt;- 用 sp_&lt;span style=&quot;font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace;&quot;&gt;Promodia_GetRunningReferralEventId 拿到&amp;nbsp;&lt;/span&gt;&lt;font face=&quot;Consolas, Courier New, monospace&quot;&gt;referralEventId&lt;/font&gt;&lt;br&gt;&lt;br&gt;執行 sp=&amp;gt; Yog_Seamless_PlacexxxBet：&lt;br&gt;- 先檢查RefNo是否已存在&lt;br&gt;- 拿到玩家資訊&lt;br&gt;-&amp;nbsp;&lt;span style=&quot;font-family: Söhne, ui-sans-serif, system-ui, -apple-system, &amp;quot;Segoe UI&amp;quot;, Roboto, Ubuntu, Cantarell, &amp;quot;Noto Sans&amp;quot;, sans-serif, &amp;quot;Helvetica Neue&amp;quot;, Arial, &amp;quot;Apple Color Emoji&amp;quot;, &amp;quot;Segoe UI Emoji&amp;quot;, &amp;quot;Segoe UI Symbol&amp;quot;, &amp;quot;Noto Color Emoji&amp;quot;;&quot;&gt;&lt;font style=&quot;font-size: 12px;&quot;&gt;檢查玩家的帳戶狀態，如果帳戶處於不正常狀態，則返回相應的錯誤代碼&lt;/font&gt;&lt;/span&gt;&lt;br&gt;-&amp;nbsp;&lt;span style=&quot;font-family: Söhne, ui-sans-serif, system-ui, -apple-system, &amp;quot;Segoe UI&amp;quot;, Roboto, Ubuntu, Cantarell, &amp;quot;Noto Sans&amp;quot;, sans-serif, &amp;quot;Helvetica Neue&amp;quot;, Arial, &amp;quot;Apple Color Emoji&amp;quot;, &amp;quot;Segoe UI Emoji&amp;quot;, &amp;quot;Segoe UI Symbol&amp;quot;, &amp;quot;Noto Color Emoji&amp;quot;;&quot;&gt;&lt;font style=&quot;font-size: 12px;&quot;&gt;檢查玩家的帳戶餘額。包括檢查是否有促銷活動，以及是否有足夠的資金進行投注&lt;/font&gt;&lt;/span&gt;&lt;br&gt;- 執行 sp=&amp;gt; Record_InsertBalanceHistory&lt;br&gt;- 更新 CashUsed 表格&lt;br&gt;- 新增資料到 SboxxxBets&lt;/font&gt;" style="whiteSpace=wrap;html=1;rounded=0;align=left;" parent="1" vertex="1">
+                    <mxGeometry x="420" y="810" width="340" height="257" as="geometry"/>
+                </mxCell>
+                <mxCell id="25" value="" style="edgeStyle=none;html=1;fontSize=14;" parent="1" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="255.625" y="798" as="sourcePoint"/>
+                        <mxPoint x="255.625" y="828" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="22" value="&lt;font color=&quot;#ff9999&quot;&gt;如果 PeruShopEnabled:&lt;br&gt;- 新增資料到 PeruShopBetRecord 和 RedeemableRefno&lt;/font&gt;" style="whiteSpace=wrap;html=1;rounded=0;align=left;" parent="1" vertex="1">
+                    <mxGeometry x="160" y="727" width="191.25" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="24" value="GetPlayerBalance()&lt;br&gt;- 拿到玩家錢包的錢後返回" style="whiteSpace=wrap;html=1;rounded=0;align=left;" parent="1" vertex="1">
+                    <mxGeometry x="160" y="827" width="191.25" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="26" value="&lt;font color=&quot;#ffffff&quot;&gt;- 用 'yy_' 分割 Request 的 username&lt;br&gt;- 分割後拿到 2 個 elements 的話，第1個設為 webId，第2個設為 username&lt;br&gt;- 分割後拿到 2 個以上的 elements 的話，username 設為 &quot;把第三個之後的element用yy_連接起來&quot;&amp;nbsp;&lt;/font&gt;" style="whiteSpace=wrap;html=1;rounded=0;align=left;" parent="1" vertex="1">
+                    <mxGeometry x="430" y="160" width="270" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="31" value="" style="edgeStyle=none;html=1;fontSize=12;" parent="1" source="28" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="590" y="750" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="33" value="" style="edgeStyle=none;html=1;fontSize=12;" parent="1" source="28" target="20" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="28" value="&lt;font color=&quot;#ffffff&quot;&gt;- 根據不同的 GameCategory， 從&amp;nbsp; sp_&lt;font style=&quot;&quot;&gt;&lt;span style=&quot;font-size: 12px; font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace;&quot;&gt;Yog_MaxWinLose_GetGMPlayerMaxWinLost / sp_&lt;/span&gt;&lt;font face=&quot;Consolas, Courier New, monospace&quot;&gt;Yog_MaxWinLose_GetLCPlayerMaxWinLost 拿到玩家的&amp;nbsp;&lt;/font&gt;&lt;span style=&quot;font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace;&quot;&gt;&lt;font style=&quot;font-size: 12px;&quot;&gt;WinLost 總額&lt;br&gt;&lt;/font&gt;&lt;/span&gt;&lt;font face=&quot;Consolas, Courier New, monospace&quot;&gt;&lt;br&gt;&lt;/font&gt;- 再到 sp_&lt;font style=&quot;&quot;&gt;&lt;span style=&quot;font-size: 12px; font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace;&quot;&gt;Yog_MaxWinLose_UpdateLcDailyResetPlayerStatement / sp_&lt;/span&gt;&lt;font face=&quot;Consolas, Courier New, monospace&quot;&gt;MaxWinLose_UpdateGmDailyResetPlayerStatement 更新&lt;/font&gt;&lt;/font&gt;&lt;/font&gt;&lt;span style=&quot;font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace;&quot;&gt;&lt;font style=&quot;font-size: 12px;&quot;&gt;&amp;nbsp;&lt;/font&gt;&lt;/span&gt;&lt;/font&gt;&lt;font style=&quot;&quot;&gt;&lt;font color=&quot;#ffffff&quot;&gt;&lt;font style=&quot;&quot; face=&quot;Consolas, Courier New, monospace&quot;&gt;LcPlayerStatement/ GmPlayerStatement&lt;br&gt;&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;&quot; face=&quot;Consolas, Courier New, monospace&quot;&gt;- 利用 sp_MaxWinLose_CheckGmPlayerStatement /&amp;nbsp;MaxWinLose_CheckLcPlayerStatement&amp;nbsp;&lt;/font&gt;&lt;font style=&quot;&quot; face=&quot;Consolas, Courier New, monospace&quot;&gt;檢查玩家的 WinLost 有沒有超過限制&lt;/font&gt;&lt;/font&gt;&lt;br&gt;&lt;/font&gt;" style="whiteSpace=wrap;html=1;rounded=0;align=left;" parent="1" vertex="1">
+                    <mxGeometry x="420" y="597" width="340" height="193" as="geometry"/>
+                </mxCell>
+                <mxCell id="35" value="- fishGame不會算 turnover（不計算turnover的原因是，如果玩家每一次進遊戲只射一次，再退出遊戲，turnover就會疊加，這樣就不合理。每進一次遊戲就會把玩家的錢全部deduct，退出遊戲後再進行結算）&amp;nbsp;&lt;br&gt;- credit Player 計算複雜，目前沒有在維護&lt;br&gt;- isPeruShopEnable 是為秘魯的客戶設定的，它有特殊的邏輯" style="rounded=1;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+                    <mxGeometry x="870" y="408" width="340" height="185" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
